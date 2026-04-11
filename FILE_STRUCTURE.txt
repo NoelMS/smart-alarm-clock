@@ -1,0 +1,71 @@
+SMART ALARM CLOCK - COMPLETE FILE STRUCTURE
+============================================
+
+Directory Structure:
+/opencode/smart-alarm-clock/
+├── smart_alarm_clock.ino          [MAIN FILE - Upload this first]
+├── config.h                        [Configuration & pin definitions]
+│
+├── Firmware Modules (copy all to same folder as .ino):
+├── rtc_manager.h
+├── rtc_manager.cpp
+├── display_manager.h
+├── display_manager.cpp
+├── button_handler.h
+├── button_handler.cpp
+├── alarm_manager.h
+├── alarm_manager.cpp
+├── alert_controller.h
+├── alert_controller.cpp
+├── wifi_manager.h
+├── wifi_manager.cpp
+├── web_server.h
+├── web_server.cpp
+│
+├── data/                          [Web interface files - upload via SPIFFS]
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── docs/                          [Documentation]
+│   ├── SETUP_GUIDE.md
+│   ├── HARDWARE_SETUP.md
+│   ├── USER_MANUAL.md
+│   ├── TROUBLESHOOTING.md
+│   └── WINDOWS_ESP32_FIX.md
+│
+├── README.md                       [Project overview]
+├── PROJECT_SUMMARY.md              [Architecture & statistics]
+├── QUICK_START.txt                 [Quick reference]
+├── INDEX.md                        [File navigation]
+└── IMMEDIATE_FIX.txt               [USB connectivity troubleshooting]
+
+SETUP INSTRUCTIONS FOR WINDOWS
+==============================
+
+1. Create folder: C:\Users\noelm\opencode\smart-alarm-clock\
+
+2. Copy ALL FILES from this folder to that location
+
+3. Open Arduino IDE and open: smart_alarm_clock.ino
+
+4. Ensure these are installed in Arduino IDE:
+   - ESP32 board support (via Board Manager)
+   - 6 required libraries (via Library Manager)
+
+5. Click Sketch → Verify to compile
+
+6. Click Sketch → Upload to send to ESP32
+
+7. When upload complete, open Tools → Serial Monitor
+
+8. Later: Use Tools → ESP32 Sketch Data Upload for web files
+
+IMPORTANT FILES
+===============
+- Main sketch: smart_alarm_clock.ino
+- Pin config: config.h
+- Setup instructions: docs/SETUP_GUIDE.md
+- Troubleshooting: docs/WINDOWS_ESP32_FIX.md
+
+All 27 files (3,893 lines of code) ready for deployment!

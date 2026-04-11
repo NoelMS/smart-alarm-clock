@@ -1,0 +1,185 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║            ESP32 NOT RECOGNIZED - IMMEDIATE FIX CHECKLIST             ║
+║                                                                        ║
+║  Problem: No COM ports in Device Manager, greyed out in Arduino IDE  ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+⏱️ TIME ESTIMATE: 5-15 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 QUICK FIX #1: TRY A DIFFERENT USB CABLE (2 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Most likely cause: Charging-only cable (has power but no data wires)
+
+ACTION STEPS:
+  1. [ ] Unplug current USB cable from ESP32
+  2. [ ] Find a different USB cable:
+         - From Android phone
+         - From printer
+         - From external hard drive
+         - From another Arduino
+  3. [ ] Try different USB port on laptop:
+         - Use USB 2.0 (older, slower ports)
+         - NOT USB 3.0 (usually blue)
+         - Try back of desktop or side of laptop
+  4. [ ] Plug ESP32 in with new cable
+  5. [ ] Wait 10 seconds for Windows to recognize
+  6. [ ] Check Device Manager:
+         - Right-click Start menu → Device Manager
+         - Look for "Ports (COM & LPT)" section
+         - Do you see COM3, COM4, or similar?
+
+RESULT:
+  ✅ YES - ESP32 appears! → Go to STEP 2: Verify Arduino IDE
+  ❌ NO - Still doesn't appear → Go to FIX #2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 STEP 2: VERIFY IN ARDUINO IDE (If cable fixed it)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ACTION STEPS:
+  1. [ ] Open Arduino IDE
+  2. [ ] Go to: Tools → Port
+  3. [ ] Do you see COM ports now?
+         They should NOT be greyed out
+
+RESULT:
+  ✅ YES - Great! You're ready to upload code
+  ❌ NO - Ports still greyed out → Try Arduino as Administrator:
+         - Close Arduino IDE
+         - Right-click Arduino shortcut
+         - Select "Run as administrator"
+         - Open Tools → Port again
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 QUICK FIX #2: INSTALL CH340 DRIVER (10 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If cable didn't work, the CH340 driver is missing.
+This is the USB-to-Serial chip on ESP32.
+
+ACTION STEPS:
+
+Step 1: Download Driver
+  1. [ ] Open browser and go to:
+         https://sparks.gogo.co.nz/ch340.html
+  2. [ ] Download the Windows version
+  3. [ ] Save it to your Downloads folder
+  4. [ ] Extract the ZIP file
+
+Step 2: Install Driver
+  1. [ ] IMPORTANT: Unplug ESP32 from USB
+  2. [ ] Find the extracted folder
+  3. [ ] Look for file named: CH341SER.EXE
+  4. [ ] Double-click it
+  5. [ ] Click "INSTALL" button
+  6. [ ] Windows shows installation progress
+  7. [ ] Click "OK" when done
+  8. [ ] IMPORTANT: Restart your computer
+
+Step 3: Verify Installation
+  1. [ ] After restart, open Device Manager
+  2. [ ] Look for: "USB-SERIAL CH340" or "CH341"
+  3. [ ] Should see it in "Ports (COM & LPT)" section
+
+Step 4: Connect ESP32
+  1. [ ] Plug ESP32 into USB
+  2. [ ] Wait 10 seconds
+  3. [ ] Check Device Manager again
+  4. [ ] Should see: "USB-SERIAL CH340 (COM3)" or similar
+
+RESULT:
+  ✅ YES - COM port appears! → Go to STEP 2: Verify Arduino IDE
+  ❌ NO - Still nothing → Try FIX #3
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 QUICK FIX #3: TRY BOOTLOADER MODE (3 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sometimes forcing ESP32 into bootloader mode helps Windows recognize it.
+
+ACTION STEPS:
+  1. [ ] Unplug ESP32 from USB
+  2. [ ] Keep USB cable connected to ESP32
+  3. [ ] Locate 2 buttons on ESP32:
+         - EN button (upper right)
+         - BOOT button (upper left)
+  4. [ ] Hold BOOT button down
+  5. [ ] While holding BOOT, press EN button briefly
+  6. [ ] Release EN, keep holding BOOT
+  7. [ ] Wait 2 seconds
+  8. [ ] Release BOOT button
+  9. [ ] Immediately plug USB into laptop
+  10. [ ] Check Device Manager
+
+RESULT:
+  ✅ YES - COM port appears! → Continue
+  ❌ NO - Still nothing → Try Step 2 again (restart)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 DETAILED REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For more detailed information, see:
+  → /home/noelm/smart-alarm-clock/docs/WINDOWS_ESP32_FIX.md
+
+This file contains:
+  • Complete troubleshooting flowchart
+  • What to do if ESP32 is defective
+  • How to verify ESP32 is working
+  • Advanced driver reinstallation steps
+  • Arduino IDE configuration tips
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ SUCCESS CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+When everything is working:
+
+  ✓ Device Manager shows "Ports (COM & LPT)"
+  ✓ ESP32 appears as "USB-SERIAL CH340 (COM3)" or similar
+  ✓ Arduino IDE opens Tools → Port (NOT greyed out)
+  ✓ COM ports listed in Arduino IDE
+  ✓ ESP32 Dev Module selected in Tools → Board
+  ✓ Ready to upload code!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Most common issue: Charging-only USB cable
+• Solution usually takes < 5 minutes
+• Always use data cables, not charging cables
+• USB 2.0 ports work better than USB 3.0 for serial
+• Keep the driver installed for future use
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆘 IF NOTHING WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Check if ESP32 is broken:
+   - LED should light up when plugged in
+   - Try different USB power sources
+   - Esp32 might be defective
+
+2. Try another computer:
+   - If possible, test on Mac or Linux
+   - Or borrow another Windows computer
+   - Helps identify if issue is software or hardware
+
+3. Check docs/WINDOWS_ESP32_FIX.md for advanced solutions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+START WITH FIX #1 NOW! 👆
