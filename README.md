@@ -2,7 +2,7 @@
 
 A complete, open-source alarm clock system designed specifically for hearing-impaired users, utilizing multi-sensory alerts including vibration, flashing LED, and visual display.
 
-## 📋 Project Overview
+## Project Overview
 
 This project provides a fully functional smart alarm clock built on the ESP32 microcontroller with the following features:
 
@@ -17,22 +17,22 @@ This project provides a fully functional smart alarm clock built on the ESP32 mi
 - **OLED Display**: Status and time display
 - **Power Efficient**: Sleep mode reduces consumption to ~5mA
 
-## 🛠️ Hardware Components
+## Hardware Components
 
 ### Required
-- **ESP32 DevKit Board** (₹350-450) - Main microcontroller
-- **DS3231 RTC** (₹100-150) - Real-time clock for accuracy
-- **Vibration Motor** (₹150-300) - Tactile alert mechanism
-- **IRF520 MOSFET** (₹50-80) - Safe motor control
-- **WS2812B LED** (₹100-200) - RGB flashing alerts
-- **Push Buttons x5** (₹20-50) - Physical controls
-- **5V/2A Power Adapter** (₹150-250) - System power
-- **Breadboard & Wires** (₹100-150) - Prototyping supplies
+- **ESP32 DevKit Board** (Rs 350-450) - Main microcontroller
+- **DS3231 RTC** (Rs 100-150) - Real-time clock for accuracy
+- **Vibration Motor** (Rs 150-300) - Tactile alert mechanism
+- **IRF520 MOSFET** (Rs 50-80) - Safe motor control
+- **WS2812B LED** (Rs 100-200) - RGB flashing alerts
+- **Push Buttons x5** (Rs 20-50) - Physical controls
+- **5V/2A Power Adapter** (Rs 150-250) - System power
+- **Breadboard & Wires** (Rs 100-150) - Prototyping supplies
 
 ### Optional
-- **0.96" OLED Display** (₹150-200) - Status display (not included, requires separate purchase)
+- **0.96" OLED Display** (Rs 150-200) - Status display (not included, requires separate purchase)
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 smart-alarm-clock/
@@ -57,7 +57,7 @@ smart-alarm-clock/
     └── TROUBLESHOOTING.md          # Issue solutions
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Development Environment
 ```bash
@@ -73,9 +73,9 @@ smart-alarm-clock/
 
 ### 3. Compile & Upload
 ```
-Sketch → Verify/Compile (Ctrl+R)
-Sketch → Upload (Ctrl+U)
-Tools → ESP32 Sketch Data Upload  # For web interface
+Sketch -> Verify/Compile (Ctrl+R)
+Sketch -> Upload (Ctrl+U)
+Tools -> ESP32 Sketch Data Upload  # For web interface
 ```
 
 ### 4. Access Web Dashboard
@@ -83,7 +83,7 @@ Tools → ESP32 Sketch Data Upload  # For web interface
 - Set alarms and configure patterns
 - Monitor alarm status in real-time
 
-## 📚 Documentation
+## Documentation
 
 ### For Setup & Installation
 - **Start here**: `docs/SETUP_GUIDE.md` - Complete development setup
@@ -93,7 +93,7 @@ Tools → ESP32 Sketch Data Upload  # For web interface
 - **User Guide**: `docs/USER_MANUAL.md` - How to use the device
 - **Troubleshooting**: `docs/TROUBLESHOOTING.md` - Common issues & fixes
 
-## ⚙️ System Architecture
+## System Architecture
 
 ### Hardware Configuration
 
@@ -129,14 +129,14 @@ Tools → ESP32 Sketch Data Upload  # For web interface
 7. **WebServer** - REST API for web control
 
 **State Machine:**
-- IDLE → MENU → SET_ALARM/WIFI_CONFIG
-- IDLE → ALARM_ACTIVE → ALARM_SNOOZED/STOPPED
+- IDLE -> MENU -> SET_ALARM/WIFI_CONFIG
+- IDLE -> ALARM_ACTIVE -> ALARM_SNOOZED/STOPPED
 
-## 🎯 Key Features
+## Key Features
 
 ### Multi-Sensory Alerts
 - **Vibration Patterns**: Gentle (60%), Medium (80%), Strong (100%)
-- **LED Flashing**: Color changes with intensity (Yellow → Orange → Red)
+- **LED Flashing**: Color changes with intensity (Yellow -> Orange -> Red)
 - **Visual Display**: "ALARM!" message with time
 - **Escalation**: Gradual increase in intensity if not acknowledged
 
@@ -153,24 +153,24 @@ Tools → ESP32 Sketch Data Upload  # For web interface
 - Per-alarm day-of-week selection
 
 ### Reliability
-- **RTC Accuracy**: ±2ppm (±2 min/month drift)
+- **RTC Accuracy**: +-2ppm (+-2 min/month drift)
 - **Persistent Storage**: EEPROM-based alarm storage
 - **Power Management**: Auto sleep mode when WiFi disabled
 - **Error Handling**: Graceful degradation if components unavailable
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 | Metric | Value |
 |--------|-------|
 | Idle Power | 5-10mA |
 | WiFi Active | 50-80mA |
 | Alarm Active | 200-300mA |
-| RTC Accuracy | ±2ppm |
+| RTC Accuracy | +-2ppm |
 | Flash Storage | 4MB |
 | EEPROM | 512 bytes |
 | Alarms Supported | 3 |
 
-## 🔧 Customization Options
+## Customization Options
 
 ### Easy Customizations (No code change needed)
 - Alarm time via physical buttons or web interface
@@ -188,7 +188,7 @@ Tools → ESP32 Sketch Data Upload  # For web interface
 
 See config.h for all adjustable constants.
 
-## 🎓 Educational Value
+## Educational Value
 
 This project demonstrates:
 - **Embedded Systems**: ESP32 GPIO, PWM, I2C protocols
@@ -198,11 +198,11 @@ This project demonstrates:
 - **EEPROM Management**: Persistent data storage
 - **Power Management**: Sleep modes and optimization
 
-## 📝 License
+## License
 
 This project is open-source and available for educational and personal use.
 
-## 🤝 Contributing
+## Contributing
 
 Improvements and bug fixes are welcome! Consider:
 - Better alarm management UI
@@ -211,7 +211,7 @@ Improvements and bug fixes are welcome! Consider:
 - Mobile app development
 - Additional alert patterns
 
-## 🆘 Support
+## Support
 
 ### Getting Help
 1. Check `docs/TROUBLESHOOTING.md` first
@@ -223,9 +223,9 @@ Improvements and bug fixes are welcome! Consider:
 - **ESP32 not detected**: Install CH340 driver
 - **Libraries missing**: Reinstall via Library Manager
 - **Display not showing**: Check I2C address and wiring
-- **Buttons not responding**: Verify pull-up resistors (10kΩ)
+- **Buttons not responding**: Verify pull-up resistors (10k ohm)
 
-## 📞 Specifications
+## Specifications
 
 ### Microcontroller
 - ESP32 dual-core 240MHz processor
@@ -234,7 +234,7 @@ Improvements and bug fixes are welcome! Consider:
 - 10 ADCs, SPI, I2C, UART interfaces
 
 ### RTC (DS3231)
-- ±2ppm accuracy (±2 minutes/month)
+- +-2ppm accuracy (+-2 minutes/month)
 - Automatic leap year
 - Battery backup support
 - Temperature-compensated
@@ -245,7 +245,7 @@ Improvements and bug fixes are welcome! Consider:
 - No external server required
 - Local web interface only
 
-## 🎯 Use Cases
+## Use Cases
 
 - **Bedroom Alarm**: Wake up with vibration + visual alerts
 - **Important Events**: Multiple alarms with escalating intensity
@@ -253,7 +253,7 @@ Improvements and bug fixes are welcome! Consider:
 - **Testing**: Learn embedded systems programming
 - **DIY Project**: Customize for personal needs
 
-## 🔒 Safety Considerations
+## Safety Considerations
 
 - MOSFET protects ESP32 from motor current spikes
 - Pull-up resistors protect GPIO inputs
@@ -261,17 +261,17 @@ Improvements and bug fixes are welcome! Consider:
 - 5V/2A power supply provides sufficient current headroom
 - Thermal management: Device stays cool even during continuous alarm
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 Planned features for future versions:
-- ✅ Bluetooth connectivity
-- ✅ Cloud alarm synchronization
-- ✅ Mobile app (iOS/Android)
-- ✅ Weather display integration
-- ✅ Sleep tracking
-- ✅ Advanced statistics
-- ✅ Voice command support
-- ✅ Integration with smart home systems
+- Bluetooth connectivity
+- Cloud alarm synchronization
+- Mobile app (iOS/Android)
+- Weather display integration
+- Sleep tracking
+- Advanced statistics
+- Voice command support
+- Integration with smart home systems
 
 ---
 
